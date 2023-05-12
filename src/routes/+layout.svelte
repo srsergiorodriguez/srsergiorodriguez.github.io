@@ -86,7 +86,7 @@
 
   :global(.block-text) {
     margin: auto;
-    padding: 30px 0px 0px 0px;
+    padding: 30px 20px 0px 20px;
     max-width: 900px;
     font-weight: 100;
     font-size: 1.1em;
