@@ -1,8 +1,10 @@
 <script>
   import DefaultGallery from './DefaultGallery.svelte';
-  export let data;
 
   import { lang } from '../stores/translations';
+  import { t } from '../stores/translations';
+
+  export let data;
 
   const keys = [...new Set(data.map(d => d.cat))];
 
@@ -12,6 +14,7 @@
 </script>
 
 <div>
+  <p class="block-text">{$t.codingIntro}</p>
   {#if data}
     {#each keys as k}
       <DefaultGallery

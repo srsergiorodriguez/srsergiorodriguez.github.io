@@ -1,7 +1,3 @@
-<script>
-  export const prerender = true
-</script>
-
 <svelte:head>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap");
@@ -18,7 +14,6 @@
     --accent2: #2754bc;
     --accent3: #1d9848;
     font-family: 'Libre Franklin', sans-serif;
-    /* filter: invert(1); */
   }
 
   :global(body) {
@@ -89,6 +84,14 @@
     pointer-events: none;
   }
 
+  :global(.block-text) {
+    margin: auto;
+    padding: 30px 0px 0px 0px;
+    max-width: 900px;
+    font-weight: 100;
+    font-size: 1.1em;
+    line-height: 1.4em;
+  }
 
   :global(.block-list) {
     margin: auto;

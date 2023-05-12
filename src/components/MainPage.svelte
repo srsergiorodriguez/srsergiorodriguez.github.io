@@ -2,6 +2,7 @@
   import HoriBar from './HoriBar.svelte';
   import { csv, autoType } from "d3";
 
+  import Waitanimation from './Waitanimation.svelte';
   import AcademicModule from './AcademicModule.svelte';
   import CodingModule from './CodingModule.svelte';
   import ComicsModule from './ComicsModule.svelte';
@@ -13,9 +14,6 @@
   import { onMount } from 'svelte';
 
   import { page } from '$app/stores';
-  if ($page.url.searchParams.has('lang')) {
-    $lang = $page.url.searchParams.get('lang') == 'en' ? 'en' : 'es';
-  }  
 
   const defaultPath = "https://docs.google.com/spreadsheets/d/12fCRM0UOHLNzwF9wWJj9BzbirUivju2macFgadrUEkY/export?format=csv&gid=";
 
@@ -34,6 +32,9 @@
       s.data = {};
       if (s.id !== undefined) s.data = await csv(defaultPath + s.id, autoType);
     }
+    if ($page.url.searchParams.has('lang')) {
+      $lang = $page.url.searchParams.get('lang') == 'en' ? 'en' : 'es';
+    } 
     ready = true;
   });
   
@@ -62,6 +63,8 @@
     </div>
     <footer class="footer"></footer>
   </div>
+  {:else}
+    <Waitanimation />
   {/if}
 </div>
 
@@ -87,12 +90,5 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 3rem;
-  }
-
-  .content {
-    /* border: solid 1px var(--stroke); */
-    /* height: 100%; */
-    
-    /* background: var(--fill); */
   }
 </style>

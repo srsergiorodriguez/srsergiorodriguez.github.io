@@ -1,9 +1,11 @@
 <script>
   import FilterList from './FilterList.svelte';
+  import { t } from '../stores/translations';
   export let data;
 </script>
 
 <div>
+  <p class="block-text">{$t.academicIntro}</p>
   {#if data}
     <FilterList
       {data}
