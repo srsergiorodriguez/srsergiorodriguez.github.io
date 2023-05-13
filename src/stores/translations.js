@@ -44,7 +44,7 @@ const translations = {
     download: "download",
     academic: 'Academic',
     academicPublications: 'Academic publications',
-    coding: 'Creative Coding',
+    coding: 'Code + Art',
     libraries: 'Libraries',
     software: 'Software',
     videogames: 'Videogames',
