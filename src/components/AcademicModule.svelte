@@ -5,7 +5,7 @@
 </script>
 
 <div>
-  <p class="block-text">{$t.academicIntro}</p>
+  <p class="block-text">{@html $t.academicIntro}</p>
   {#if data}
     <FilterList
       {data}

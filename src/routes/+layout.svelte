@@ -87,10 +87,20 @@
   :global(.block-text) {
     margin: auto;
     padding: 30px 20px 0px 20px;
-    max-width: 900px;
+    max-width: 850px;
     font-weight: 100;
     font-size: 1.1em;
     line-height: 1.4em;
+  }
+
+  :global(.block-text a:hover) {
+    text-decoration: underline;
+  }
+
+  :global(.block-text a) {
+    color: var(--accent3);
+    font-weight: 500;
+    text-decoration: none;
   }
 
   :global(.block-list) {

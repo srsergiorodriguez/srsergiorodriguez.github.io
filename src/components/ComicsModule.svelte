@@ -14,7 +14,7 @@
 </script>
 
 <div>
-  <p class="block-text">{$t.comicsIntro}</p>
+  <p class="block-text">{@html $t.comicsIntro}</p>
   {#if data}
     {#each keys as k}
       <DefaultGallery

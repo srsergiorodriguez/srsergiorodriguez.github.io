@@ -35,6 +35,14 @@
     if ($page.url.searchParams.has('lang')) {
       $lang = $page.url.searchParams.get('lang') == 'en' ? 'en' : 'es';
     } 
+    if ($page.url.searchParams.has('s')) {
+      const sectionKeys = schema.map(d => d.name);
+      const sectionParam = $page.url.searchParams.get('s');
+      if (sectionKeys.includes(sectionParam)) {
+        console.log(schema.find(d => d.name === sectionParam));
+        selectedModule = schema.find(d => d.name === sectionParam);
+      }
+    } 
     ready = true;
   });
   
@@ -84,8 +92,6 @@
   }
   
   .main-title {
-    /* border: solid 1px var(--stroke);
-    border-bottom: none; */
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -32,7 +32,7 @@
   }
 </script>
 <div class="background-container">
-  <svg bind:this={svgElement} width="200px" height="200px">
+  <svg bind:this={svgElement} width="400px" height="400px">
     <g></g>
   </svg>
 </div>

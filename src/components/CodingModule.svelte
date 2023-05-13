@@ -14,7 +14,7 @@
 </script>
 
 <div>
-  <p class="block-text">{$t.codingIntro}</p>
+  <p class="block-text">{@html $t.codingIntro}</p>
   {#if data}
     {#each keys as k}
       <DefaultGallery

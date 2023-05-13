@@ -23,7 +23,9 @@
         </a>
       </div>
       <div class="gallery-container no-select">
-        <img src={d[img]} alt={header(d)}/>
+        <a href={d[link]} target="_blank" rel="noreferrer">
+          <img src={d[img]} alt={header(d)}/>
+        </a>
       </div>
     </div>
   {/each}
