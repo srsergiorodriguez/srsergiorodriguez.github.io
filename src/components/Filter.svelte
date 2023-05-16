@@ -85,4 +85,10 @@
   button:hover {
     filter: invert(0.5);
   }
+
+  @media screen and (max-device-width: 400px) {
+    .filter-container {
+      flex-direction: column;
+    }
+  }
 </style>

@@ -120,6 +120,7 @@
   :global(.list-container a) {
     text-decoration: none;
     cursor: pointer;
+    word-break: break-all;
   }
 
   :global(.list-container a:hover) {
@@ -128,5 +129,14 @@
 
   :global(.list-container a:visited) {
     color: var(--stroke);
+  }
+
+  @media screen and (max-device-width: 450px) {
+    :global(p,.block-text) {
+      font-size: 0.9em;
+    }
+    :global(h1) {
+      font-size: 1.1em;
+    }
   }
 </style>

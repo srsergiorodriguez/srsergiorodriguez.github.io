@@ -38,17 +38,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-    /* height: 150px; */
     padding: 0.5rem;
-    /* padding: 0; */
-    /* border: solid red 2px; */
   }
 
   .gallery-container {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
     height: 200px;
   }
 
@@ -58,5 +54,21 @@
 
   .gallery-title {
     margin: 0;
+  }
+
+  @media screen and (max-device-width: 550px) {
+    .two-col-gallery {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-container {
+      height: auto;
+      margin: auto;
+    }
+
+    img {
+      max-height: 200px;
+    }
   }
 </style>

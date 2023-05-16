@@ -30,4 +30,11 @@
     font-size: 1em;
     font-weight: 700;
   }
+
+
+  @media screen and (max-device-width: 400px) {
+    .pdf-container {
+      display: none;
+    }
+  }
 </style>

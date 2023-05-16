@@ -78,8 +78,6 @@
 
 <style>
   .general {
-    /* background: blue; */
-    /* background: var(--fill); */
     height: 100vh;
   }
 
@@ -96,5 +94,18 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 3rem;
+  }
+
+  @media screen and (max-device-width: 450px) {
+    .main-container {
+      width: 100%;
+    }
+
+    .main-title {
+      display: flex;
+      justify-content:space-evenly;
+      padding: 5px;
+    }
+
   }
 </style>

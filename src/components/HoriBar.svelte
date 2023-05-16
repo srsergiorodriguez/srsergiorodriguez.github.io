@@ -54,4 +54,16 @@
     color: var(--accent1);
     /* background: var(--stroke); */
   }
+
+  @media screen and (max-device-width: 400px) {
+    button {
+      font-size: 0.9em;
+    }
+
+    .bar-list {
+      flex-direction: column;
+      gap: 1em;
+      padding: 0 1em;
+    }
+  }
 </style>
