@@ -120,7 +120,6 @@
   :global(.list-container a) {
     text-decoration: none;
     cursor: pointer;
-    word-break: break-all;
   }
 
   :global(.list-container a:hover) {

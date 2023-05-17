@@ -106,6 +106,5 @@
       justify-content:space-evenly;
       padding: 5px;
     }
-
   }
 </style>

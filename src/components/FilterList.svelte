@@ -28,5 +28,10 @@
       </a>
     </div>
   {/each}
-  
 </div>
+
+<style>
+  .list-container {
+    word-break: break-all;
+  }
+</style>
