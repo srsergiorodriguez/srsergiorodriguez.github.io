@@ -1,7 +1,7 @@
 <svelte:head>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap");
-    </style>
+  <style>
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap");
+  </style>
 </svelte:head>
 
 <slot></slot>
@@ -13,7 +13,8 @@
     --accent1: #d8422e;
     --accent2: #2754bc;
     --accent3: #1d9848;
-    font-family: 'Libre Franklin', sans-serif;
+    --mainfont: 'Libre Franklin', sans-serif;
+    font-family: var(--mainfont);
   }
 
   :global(body) {
@@ -21,15 +22,14 @@
     margin: 0px;
     background: var(--fill);
     color: var(--stroke);
-    
   }
 
   :global(button, select, input) {
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: var(--mainfont);
   }
 
   :global(h1, h2, h3, h4, h5, h6) {
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: var(--mainfont);
   }
 
   :global(h1, h5) {

@@ -24,14 +24,14 @@
     <div class="list-container">
       <a href={d[link]} target="_blank" rel="noreferrer">
         <h3>{header(d)}</h3>
-        <p>{subheader(d)}</p>
+        <p class="subheader">{subheader(d)}</p>
       </a>
     </div>
   {/each}
 </div>
 
 <style>
-  .list-container {
+  .subheader {
     word-break: break-all;
   }
 </style>
