@@ -98,7 +98,6 @@
   }
 
   :global(.block-text a) {
-    color: var(--accent3);
     font-weight: 500;
     text-decoration: none;
   }
@@ -111,10 +110,12 @@
 
   :global(.block-list p) {
     margin: 4px 0px;
+    color: var(--stroke);
   }
 
   :global(.block-list h3) {
     margin: 35px 0px 5px;
+    color: var(--accent3);
   }
 
   :global(.list-container a) {
@@ -124,10 +125,11 @@
 
   :global(.list-container a:hover) {
     text-decoration: underline;
+    color: var(--accent3);
   }
 
-  :global(.list-container a:visited) {
-    color: var(--stroke);
+  :global(.list-container a:active) {
+    color: red;
   }
 
   @media screen and (max-device-width: 450px) {
