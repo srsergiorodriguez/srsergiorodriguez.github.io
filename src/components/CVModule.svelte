@@ -8,7 +8,7 @@
 <div>
   <object class="pdf-container" title="cv" data={`./cv/CV_sergio_rodriguez_gomez_${$lang}.pdf`} type="application/pdf" width="100%" height="700px"></object>
   <div class="button-container">
-    <button class="default-button big-button">{`${$capitalize($t.download)} ${$t.cv}`}</button>
+    <a download target="_blank" rel="noreferrer" href={`./cv/CV_sergio_rodriguez_gomez_${$lang}.pdf`}><button class="default-button big-button">{`${$capitalize($t.download)} ${$t.cv}`}</button></a>
   </div>
 </div>
 
@@ -32,7 +32,7 @@
   }
 
 
-  @media screen and (max-device-width: 400px) {
+  @media screen and (max-device-width: 450px) {
     .pdf-container {
       display: none;
     }
