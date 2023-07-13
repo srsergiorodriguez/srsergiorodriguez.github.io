@@ -1,5 +1,8 @@
 <script>
-  import MainPage from '../components/MainPage.svelte'
+  import MainPageStore from '../components/MainPageStore.svelte';
+  // import MainPageSlot from '../components/MainPageSlot.svelte';
+  // import Loader from '../components/Loader.svelte';
 </script>
-
-<MainPage />
+<MainPageStore />
+<!-- <MainPageSlot>asddsadsa</MainPageSlot> -->
+<!-- <Loader /> -->

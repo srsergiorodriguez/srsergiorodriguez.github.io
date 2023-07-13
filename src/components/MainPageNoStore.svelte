@@ -39,7 +39,6 @@
       const sectionKeys = schema.map(d => d.name);
       const sectionParam = $page.url.searchParams.get('s');
       if (sectionKeys.includes(sectionParam)) {
-        console.log(schema.find(d => d.name === sectionParam));
         selectedModule = schema.find(d => d.name === sectionParam);
       }
     } 
@@ -55,7 +54,6 @@
     <div class="main-title no-select">
       <div>
         <h1>Sergio Rodríguez Gómez</h1>
-        <!-- <h2>Portafolio</h2> -->
       </div>
       <div>
         <select on:change={changeLang}>

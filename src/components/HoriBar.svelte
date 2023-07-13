@@ -4,8 +4,11 @@
 
   import { t } from '../stores/translations';
 
-  function selectModule(i) {
-    selectedModule = i;
+  function selectModule(d) {
+    selectedModule = d;
+    const url = new URL(window.location);
+    url.searchParams.set('s', selectedModule.name);
+    window.history.pushState(null, '', url.toString());
   }
 </script>
 

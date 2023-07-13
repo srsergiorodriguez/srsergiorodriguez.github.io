@@ -6,11 +6,13 @@ const config = {
 		paths: {
 			base: ''
 		},
+		// trailingSlash: 'always',
 		adapter: adapter({
 				pages: 'docs',
-				fallback: "index.html",
+				// fallback: "index.html",
 				precompress: false,
-				strict: true
+				strict: true,
+				hydrate: true
 		})
 	}
 };

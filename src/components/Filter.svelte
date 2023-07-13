@@ -44,7 +44,7 @@
   {#each filters as f, i}
     <div>
       <span>{$capitalize($t[f])}: </span>
-      <select class="selector-filter" on:change={e => setFilter(e, i)}>
+      <select id={`selectorFilter_${f}_${i}`} class="selector-filter" on:change={e => setFilter(e, i)}>
         <option value={""} selected>{$t.all}</option>
         {#each getOptions(f) as fe}
           <option value={fe}>{fe}</option>
