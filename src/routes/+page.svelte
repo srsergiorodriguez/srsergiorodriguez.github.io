@@ -1,8 +1,4 @@
 <script>
-  import MainPageStore from '../components/MainPageStore.svelte';
-  // import MainPageSlot from '../components/MainPageSlot.svelte';
-  // import Loader from '../components/Loader.svelte';
+  import MainPageSlot from '../components/MainPageSlot.svelte';
 </script>
-<MainPageStore />
-<!-- <MainPageSlot>asddsadsa</MainPageSlot> -->
-<!-- <Loader /> -->
+<MainPageSlot name={"academic"}/>

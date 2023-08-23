@@ -6,9 +6,8 @@ const config = {
 		paths: {
 			base: ''
 		},
-		// trailingSlash: 'always',
 		adapter: adapter({
-				pages: 'docs',
+				// pages: 'build',
 				// fallback: "index.html",
 				precompress: false,
 				strict: true,

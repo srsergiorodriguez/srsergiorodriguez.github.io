@@ -6,16 +6,17 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout.d5262a51.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/_page.4d7c892c.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.7d5e8b93.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.75f4d57c.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.68d653ee.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.b1abe72b.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/_layout.svelte.01815b8d.js">
+		<link href="./_app/immutable/assets/MainPageSlot.9f1eafdb.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.3807ef35.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.360fefce.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.53b9e6b2.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.23165746.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.svelte.4221498e.js">
 		<link rel="modulepreload" href="./_app/immutable/entry/_layout.js.984db11e.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/_page.svelte.3803a3a4.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.66a77d3c.js"><!-- HEAD_svelte-eoco9y_START --><style>@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap");
+		<link rel="modulepreload" href="./_app/immutable/entry/_page.svelte.852951ce.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/MainPageSlot.3ddfe4c7.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/stores.8724fa1b.js"><!-- HEAD_svelte-eoco9y_START --><style>@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap");
   </style><!-- HEAD_svelte-eoco9y_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
@@ -24,20 +25,27 @@
 
 
 
-<div class="general svelte-xh8n4k">
+
 <div class="background-container svelte-1doa6oy"><svg width="100%" height="100%"><g></g></svg>
 </div>
-  <div class="background-container svelte-1t1038m"><svg width="400px" height="400px"><g></g></svg>
+<div class="main-container svelte-1k5ucfr"><div class="main-title no-select svelte-1k5ucfr"><div><h1>Sergio Rodríguez Gómez</h1></div>
+    <div><select id="lang-selector"><option value="es" selected>es</option><option value="en" >en</option></select></div></div>
+  <nav class="bar no-select svelte-1boelhv"><ul class="bar-list svelte-1boelhv"><li class="bar-list-element"><a href="./academic"><button class="selected svelte-1boelhv">Académico</button></a>
+      </li><li class="bar-list-element"><a href="./code"><button class=" svelte-1boelhv">Código + Arte</button></a>
+      </li><li class="bar-list-element"><a href="./comics"><button class=" svelte-1boelhv">Cómics</button></a>
+      </li><li class="bar-list-element"><a href="./cv"><button class=" svelte-1boelhv">Hoja de vida</button></a>
+      </li></ul>
+</nav>
+  <div class="content"><div class="background-container svelte-1t1038m"><svg width="400px" height="400px"><g></g></svg>
+</div></div>
+  <footer class="footer"></footer>
 </div>
-</div>
-
-
 
 
 			
 			<script>
 				{
-					__sveltekit_61zisy = {
+					__sveltekit_fov6ai = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -47,8 +55,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.7d5e8b93.js"),
-						import("./_app/immutable/entry/app.b1abe72b.js")
+						import("./_app/immutable/entry/start.3807ef35.js"),
+						import("./_app/immutable/entry/app.23165746.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],

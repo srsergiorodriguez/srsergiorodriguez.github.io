@@ -1,13 +1,34 @@
 <script>
   import HoriBar from './HoriBar.svelte';
   import Background from './Background.svelte';
+  import Waitanimation from './Waitanimation.svelte';
+
   import { langs, lang } from '../stores/translations';
-  import { schema, selectedModule } from '../stores/schema';
+  import { schema } from '../stores/schema';
+  
+  import { page } from '$app/stores';
+  import { onMount } from 'svelte';
+  import { csv, autoType } from "d3";
+
+  export let name;
   
   function changeLang() { $lang = this.value }
+
+  const defaultPath = "https://docs.google.com/spreadsheets/d/12fCRM0UOHLNzwF9wWJj9BzbirUivju2macFgadrUEkY/export?format=csv&gid=";
+
+  const sm = $schema.find(d => d.name === name);
+
+  let ready = false;
+  onMount(async () => {
+    if (sm.id !== undefined && sm.data === undefined) sm.data = await csv(defaultPath + sm.id, autoType);
+    if ($page.url.searchParams.has('lang')) {
+      $lang = $page.url.searchParams.get('lang') == 'en' ? 'en' : 'es';
+    } 
+    ready = true;
+  });
 </script>
 
-<Background module={$selectedModule.name} />
+<Background module={name} />
 <div class="main-container">
   <div class="main-title no-select">
     <div>
@@ -21,9 +42,13 @@
       </select>
     </div>
   </div>
-  <HoriBar menuList={$schema} bind:selectedModule={$selectedModule}/>
+  <HoriBar menuList={$schema} {name}/>
   <div class="content">
-    <slot />
+    {#if ready}
+      <svelte:component this={sm.module} data={sm.data}/>
+    {:else}
+      <Waitanimation />
+    {/if}
   </div>
   <footer class="footer"></footer>
 </div>

@@ -47,7 +47,7 @@
     function getCoords(module) {
       const fn = {
         "academic": {x1: op("x","scl"), x2: op("x","idt"), y1: op("y","scl"), y2: op("y","idt")},
-        "prog"  : {x1: op("x","rnd"), x2: op("x","rn2"), y1: op("y","rnd"), y2: op("y","rn2")},
+        "code"  : {x1: op("x","rnd"), x2: op("x","rn2"), y1: op("y","rnd"), y2: op("y","rn2")},
         "comics"  : {x1: op("x","rnd"), x2: op("x","idt"), y1: op("y","rnd"), y2: op("y","idt")},
         "cv"      : {x1: op("x","scl"), x2: op("x","inv"), y1: op("y","scl"), y2: op("y","inv")}
       }

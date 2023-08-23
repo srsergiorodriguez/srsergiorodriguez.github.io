@@ -1,22 +1,17 @@
 <script>
+  import { base } from "$app/paths";
+
   export let menuList;
-  export let selectedModule;
+  export let name;
 
   import { t } from '../stores/translations';
-
-  function selectModule(d) {
-    selectedModule = d;
-    const url = new URL(window.location);
-    url.searchParams.set('s', selectedModule.name);
-    window.history.pushState(null, '', url.toString());
-  }
 </script>
 
 <nav class="bar no-select">
   <ul class="bar-list">
     {#each menuList as d}
       <li class="bar-list-element">
-        <button class={selectedModule === d ? "selected" : ""} href="/" on:click={() => selectModule(d)}>{$t[d.name]}</button>
+        <a href={base+"/"+d.path}><button class={name === d.name ? "selected" : ""}>{$t[d.name]}</button></a>
       </li>
     {/each}
   </ul>
@@ -55,7 +50,6 @@
 
   .selected {
     color: var(--accent1);
-    /* background: var(--stroke); */
   }
 
   @media screen and (max-device-width: 400px) {

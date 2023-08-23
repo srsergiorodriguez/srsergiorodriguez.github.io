@@ -27,7 +27,7 @@
       .style("stroke-dashoffset", t => -t)
       .style("fill", "none")
       .attr("cx", w/2)
-      .attr("cy", h/2)
+      .attr("cy", h)
       .attr("r", r)
   }
 </script>
