@@ -17,15 +17,24 @@
   {#each data as d}
     <div class="list-container two-col-gallery">
       <div class="gallery-container">
-        <a href={d[link]} target="_blank" rel="noreferrer">
+        {#if d[link] !== undefined}
+          <a href={d[link]} target="_blank" rel="noreferrer">
+            <h3 class="gallery-title">{header(d)}</h3>
+            <p>{subheader(d)}</p>
+          </a>
+        {:else}
           <h3 class="gallery-title">{header(d)}</h3>
           <p>{subheader(d)}</p>
-        </a>
+        {/if}
       </div>
       <div class="gallery-container no-select">
-        <a href={d[link]} target="_blank" rel="noreferrer">
+        {#if d[link] !== undefined}
+          <a href={d[link]} target="_blank" rel="noreferrer">
+            <img src={d[img]} alt={header(d)}/>
+          </a>
+        {:else}
           <img src={d[img]} alt={header(d)}/>
-        </a>
+        {/if}
       </div>
     </div>
   {/each}
