@@ -20,7 +20,7 @@
       <DefaultGallery
         data={getFiltered(k)}
         title={k}
-        header={d => `${d.name}`}
+        header={d => `${d.name} - ${d.date}`}
         subheader={d => `${d["info_"+$lang]}`}
         link={"url"}
         img={"img"}
