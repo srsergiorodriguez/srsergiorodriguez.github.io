@@ -14,6 +14,7 @@
     --accent2: #2754bc;
     --accent3: #1d9848;
     --mainfont: 'Libre Franklin', sans-serif;
+    --headerfont: 'Libre Franklin', sans-serif;
     font-family: var(--mainfont);
   }
 
@@ -29,7 +30,11 @@
   }
 
   :global(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--mainfont);
+    font-family: var(--headerfont);
+  }
+
+  :global(a) {
+    color: var(--accent3);
   }
 
   :global(h1, h5) {

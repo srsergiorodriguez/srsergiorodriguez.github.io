@@ -3,7 +3,8 @@
   import Background from './Background.svelte';
   import Waitanimation from './Waitanimation.svelte';
 
-  import { langs, lang } from '../stores/translations';
+  import { langs, lang, t } from '../stores/translations';
+  
   import { schema } from '../stores/schema';
   
   import { page } from '$app/stores';
@@ -32,9 +33,10 @@
 <div class="main-container">
   <div class="main-title no-select">
     <div>
-      <h1>Sergio Rodríguez Gómez</h1>
+      <h1>Sergio Rodríguez Gómez — {$t.portfolio}</h1>
     </div>
     <div>
+      Idioma/language: 
       <select id="lang-selector" on:change={changeLang}>
         {#each $langs as l}
           <option value={l} selected={$lang == l}>{l}</option>
@@ -69,14 +71,18 @@
     padding: 30px 3rem;
   }
 
+  @media (max-width: 1000px) {
+    .main-title {
+      flex-direction: column;
+    }
+  }
+
   @media screen and (max-device-width: 450px) {
     .main-container {
       width: 100%;
     }
 
     .main-title {
-      display: flex;
-      justify-content:space-evenly;
       padding: 5px;
     }
   }

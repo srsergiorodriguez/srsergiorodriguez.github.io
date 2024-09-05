@@ -3,6 +3,7 @@ import { readable, writable, derived } from 'svelte/store';
 const translations = {
   // ESPAÑOL
   es: {
+    portfolio: "portafolio",
     filters: "filtros",
     date: "fecha",
     language: "idioma",
@@ -33,6 +34,7 @@ const translations = {
   },
   // ENGLISH
   en: {
+    portfolio: "portafolio",
     filters: "filters",
     date: "date",
     language: "language",
