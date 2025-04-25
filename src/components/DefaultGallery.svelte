@@ -61,6 +61,10 @@
     height: 100%;
   }
 
+  img:hover {
+    filter: grayscale(100%) invert(100%);
+  }
+
   .gallery-title {
     margin: 0;
   }
