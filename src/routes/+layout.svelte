@@ -135,7 +135,7 @@
   }
 
   :global(.list-container a:active) {
-    color: red;
+    color: rgb(128, 128, 128);
   }
 
   @media screen and (max-device-width: 450px) {
