@@ -19,7 +19,7 @@
 
 <style>
   .bar {
-    border-top: solid 1px var(--stroke);
+    border-top: solid 0.1px var(--stroke);
     border-bottom: solid 1px var(--stroke);
   }
   
@@ -32,6 +32,7 @@
   }
 
   button {
+    font-family: var(--headerfont);
     border: none;
     background: none;
     font-size: 1.2rem;
@@ -52,9 +53,9 @@
     color: var(--accent1);
   }
 
-  @media screen and (max-device-width: 400px) {
+  @media screen and (max-device-width: 550px) {
     button {
-      font-size: 0.9em;
+      font-size: 1.4em;
     }
 
     .bar-list {

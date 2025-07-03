@@ -1,6 +1,9 @@
 <svelte:head>
   <style>
       @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="960a1636-9a1c-4f6a-8e89-e24be869efc0"></script>
 </svelte:head>
@@ -10,12 +13,13 @@
 <style>
   :global(:root){
     --stroke: black;
-    --fill: rgb(242, 243, 236);
+    --fill: rgb(240, 245, 244);
     --accent1: #000000;
     --accent2: #000000;
     --accent3: #000000;
     --mainfont: 'Libre Franklin', sans-serif;
-    --headerfont: 'Libre Franklin', sans-serif;
+    --headerfont: "Raleway", sans-serif;
+    --titlefont:  "Raleway", sans-serif;
     font-family: var(--mainfont);
   }
 
@@ -32,6 +36,7 @@
 
   :global(h1, h2, h3, h4, h5, h6) {
     font-family: var(--headerfont);
+    font-weight: 700;
   }
 
   :global(a) {
@@ -48,6 +53,16 @@
 
   :global(h3, h6) {
     color: var(--accent3);
+  }
+
+  :global(select) {
+    background: var(--fill);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  :global(select:focus) {
+    box-shadow: 0 0 3px 0 #3290f5;
   }
 
   :global(.no-select)  {

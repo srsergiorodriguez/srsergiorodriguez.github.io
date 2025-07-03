@@ -18,7 +18,10 @@
 
   function render() {
     // 1) take a snapshot of the old data before we mutate it
-    const oldCache = JSON.parse(JSON.stringify(prevLineData));
+    const oldCache = prevLineData.map(d => ({
+      id: d.id,
+      points: d.points.map(p => ({ x: p.x, y: p.y }))
+    }));
 
     // 2) layout math
     const { width: w, height: h } = svgElement.getBoundingClientRect();
@@ -53,17 +56,20 @@
         .duration(500)
         .ease(d3.easeBounceOut)
         .attrTween('d', function(d) {
-          const oldPoints = oldCache.find(p => p.id === d.id)?.points || d.points;
-          const yrnd = Math.random() * 50;
-          oldPoints[0].y = oldPoints[0].y - yrnd;
-          oldPoints[1].y = oldPoints[1].y - yrnd;
-          const interp = d3.interpolateArray(oldPoints, d.points);          
+          // NOW we look up oldCache (not the new prevLineData!)
+          const oldPoints = oldCache.find(p => p.id === d.id)?.points 
+                             || d.points;
+          const interp = d3.interpolateArray(oldPoints, d.points);
+          console.log(oldPoints, d.points)
           return t => lineGen(interp(t));
         })
         .style('stroke-dasharray', /comics/i.test(module) ? '100, 0' : '5, 5');
 
     // 6) update prevLineData _after_ scheduling the transition
-    prevLineData = JSON.parse(JSON.stringify(lineData));
+    prevLineData = lineData.map(d => ({
+      id: d.id,
+      points: d.points.map(p => ({ x: p.x, y: p.y }))
+    }));
   }
 
   function getCoords(mod, sectw, secth, w, h) {

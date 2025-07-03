@@ -2,7 +2,7 @@ import { readable, writable, derived } from 'svelte/store';
 
 const translations = {
   // ESPAÑOL
-  es: {
+  Español: {
     portfolio: "portafolio",
     filters: "filtros",
     date: "fecha",
@@ -33,7 +33,7 @@ const translations = {
     comicsIntro: "<strong>Los cómics son un arte integral: hay que dibujar, narrar, diseñar, diagramar, hacer uso de símbolos y referentes culturales</strong>. Tengo la fortuna de hacer parte del colectivo comiquero <a href='https://4mesas.github.io/' target='_blank'>4mesas</a>, que piensa y crea cómics colaborando y apoyando los proyectos individuales de sus integrantes."
   },
   // ENGLISH
-  en: {
+  English: {
     portfolio: "portafolio",
     filters: "filters",
     date: "date",
@@ -65,6 +65,6 @@ const translations = {
   }
 }
 
-export const lang = writable("es");
+export const lang = writable("Español");
 export const t = derived(lang, $lang => translations[$lang]);
 export const langs = readable(Object.keys(translations));

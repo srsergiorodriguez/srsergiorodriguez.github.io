@@ -62,6 +62,7 @@
   }
 
   img:hover {
+    transition: 0.7s all;
     filter: grayscale(100%) invert(100%);
   }
 
