@@ -60,7 +60,7 @@
           const oldPoints = oldCache.find(p => p.id === d.id)?.points 
                              || d.points;
           const interp = d3.interpolateArray(oldPoints, d.points);
-          console.log(oldPoints, d.points)
+          // console.log(oldPoints, d.points)
           return t => lineGen(interp(t));
         })
         .style('stroke-dasharray', /comics/i.test(module) ? '100, 0' : '5, 5');

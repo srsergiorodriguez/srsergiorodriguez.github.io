@@ -13,7 +13,7 @@
 <style>
   :global(:root){
     --stroke: black;
-    --fill: rgb(240, 245, 244);
+    --fill: #f0f5f4;
     --accent1: #000000;
     --accent2: #000000;
     --accent3: #000000;

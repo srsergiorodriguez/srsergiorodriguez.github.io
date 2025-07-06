@@ -52,7 +52,7 @@
     <div class="ribbon-container">
       <h2>{$t.portfolio}</h2>
     </div>
-    <HoriBar menuList={$schema} {name}/>
+    <HoriBar menuList={$schema.filter(d => d.showOnMenu)} {name}/>
     <div class="content">
       {#if ready}
         <svelte:component this={sm.module} data={sm.data}/>
