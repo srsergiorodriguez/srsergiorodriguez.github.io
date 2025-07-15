@@ -1,8 +1,6 @@
 <svelte:head>
   <style>
       @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap");
-      @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="960a1636-9a1c-4f6a-8e89-e24be869efc0"></script>

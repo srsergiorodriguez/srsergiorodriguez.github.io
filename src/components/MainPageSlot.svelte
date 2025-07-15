@@ -57,7 +57,11 @@
     <HoriBar menuList={$schema.filter(d => d.showOnMenu)} {name}/>
     <div class="content">
       {#if ready}
-        <svelte:component this={sm.module} data={sm.data}/>
+        {#if sm.data}
+          <svelte:component this={sm.module} data={sm.data}/>
+        {:else}
+          <svelte:component this={sm.module} />
+        {/if}
       {:else}
         <Waitanimation />
       {/if}

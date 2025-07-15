@@ -4,10 +4,12 @@
   import { hoveredModule } from '../stores/schema';
 
   let svgElement;
+  let wrapper;
   let ready = false;
   onMount(async () => {
-    render();
+    await setup();
     ready = true;
+    render();
   });
 
   const toHide = ["Gafas", "Boina", "Espiral", "Engranaje"];
@@ -20,34 +22,46 @@
     none: null
   }
 
+  async function setup() {
+    const xml = await d3.xml('./sketch/personaje.svg');
+    const imported = d3.select(xml.documentElement);
+
+    const mesaNode = imported.select(`#${CSS.escape("Mesa-de-trabajo1")}`).node();
+    if (!mesaNode) return
+
+    const rootG = d3.select(svgElement).select("g");
+    wrapper = rootG.append('g').attr('class', 'mesa-wrapper');
+
+    wrapper.node().appendChild(mesaNode.cloneNode(true));
+
+    // init hide all
+    toHide.filter(d => d !== showKeys[$hoveredModule]).forEach(id => {
+      rootG
+        .select(`#${CSS.escape(id)}`)
+        .style('display', 'none')
+        .style('opacity', 0)
+    });
+
+    return new Promise(r => r())
+  }
+
   async function render() {
-    const svgStyle = getComputedStyle(svgElement);
-    const w = +svgStyle.width.replace("px","");
-    const h = +svgStyle.height.replace("px","");
+    if (!ready) return
+
+    const { width:w, height:h } = svgElement.getBoundingClientRect();
 
     const m = {l: w * 0.1, r: w * 0.1, t: h * 0.1, b: h * 0.1};
     const rootW = w - m.l - m.r;
     const rootH = h - m.t - m.b;
 
     const rootG = d3.select(svgElement).select("g");
-    rootG.selectAll("g").remove();
+
     rootG.attr("transform", `translate(${m.l},${m.t})`);
 
-    
-
-    const xml = await d3.xml('./sketch/personaje.svg');
-    const imported = d3.select(xml.documentElement);
-
-    const mesaNode = imported.select(`#${CSS.escape("Mesa-de-trabajo1")}`).node();
-
-    const wrapper = rootG.append('g').attr('class', 'mesa-wrapper');
-    wrapper.node().appendChild(mesaNode.cloneNode(true));
-
     const bbox = wrapper.node().getBBox();
-    const scale = Math.min(
-      rootW  / bbox.width,
-      rootH / bbox.height
-    );
+
+    // compute scale
+    const scale = Math.min(rootW  / bbox.width, rootH / bbox.height);
 
     // compute translate to center
     const tx = (rootW  - bbox.width  * scale) / 2 - bbox.x * scale;
@@ -55,14 +69,6 @@
 
     // apply transform
     wrapper.attr('transform', `translate(${tx},${ty}) scale(${scale})`);
-
-    // initialize display state
-    toHide.filter(d => d !== showKeys[$hoveredModule]).forEach(id => {
-      rootG
-        .select(`#${CSS.escape(id)}`)
-        .style('display', 'none')
-        .style('opacity', 0)
-    });
   }
 
   $: if (ready) {
@@ -75,19 +81,17 @@
           .interrupt()                 // cancel any running transition
           .style('display', null)
           .transition().duration(300)
-          .style('opacity', 1);
+            .style('opacity', 1);
       } else {
         // fade out + then hide
         sel
           .interrupt()
-          .transition().duration(500)
-          .style('opacity', 0)
-          .on('end', () => sel.style('display', 'none'));
+          .transition().duration(500).ease(d3.easeBackOut)
+            .style('opacity', 0)
+            .on('end', () => sel.style('display', 'none'));
       }
     });
   }
-  
-  export let data = "";
 </script>
 
 <svelte:window on:resize={() => {render()}} />
