@@ -34,7 +34,9 @@
   <div class="main-title-background">
     <div class="main-title no-select">
       <div>
-        <h1>Sergio Rodríguez Gómez</h1>
+        <a href="/">
+          <h1>Sergio Rodríguez Gómez</h1>
+        </a>
         <!-- <h2>{$t.portfolio}</h2> -->
       </div>
       <div class="lang-selector-container">
@@ -78,6 +80,10 @@
     align-items: start;
     padding: 20px 3rem;
     background: color-mix(in srgb, var(--fill) 70%, transparent);
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .main-title h1 {

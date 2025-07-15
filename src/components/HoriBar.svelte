@@ -1,17 +1,22 @@
 <script>
   import { base } from "$app/paths";
+  import { hoveredModule } from "../stores/schema";
+  import { t } from '../stores/translations';
 
   export let menuList;
   export let name;
 
-  import { t } from '../stores/translations';
+  function setHover(name) {
+    $hoveredModule = name;
+  }
 </script>
 
 <nav class="bar no-select">
   <ul class="bar-list">
     {#each menuList as d}
       <li class="bar-list-element">
-        <a href={base+"/"+d.path}><button class={name === d.name ? "selected" : ""}>{$t[d.name]}</button></a>
+        <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+        <a on:mouseover={() => setHover(d.name)} on:mouseout={() => setHover("none")} href={base+"/"+d.path}><button class={name === d.name ? "selected" : ""}>{$t[d.name]}</button></a>
       </li>
     {/each}
   </ul>
