@@ -15,13 +15,16 @@
   
   function changeLang() { $lang = this.value }
 
-  const defaultPath = "https://docs.google.com/spreadsheets/d/12fCRM0UOHLNzwF9wWJj9BzbirUivju2macFgadrUEkY/export?format=csv&gid=";
+  // const defaultPath = "https://docs.google.com/spreadsheets/d/12fCRM0UOHLNzwF9wWJj9BzbirUivju2macFgadrUEkY/export?format=csv&gid=";
 
   const sm = $schema.find(d => d.name === name);
 
+  // console.log(sm.id);
+
   let ready = false;
   onMount(async () => {
-    if (sm.id !== undefined && sm.data === undefined) sm.data = await csv(defaultPath + sm.id, autoType);
+    // if (sm.id !== undefined && sm.data === undefined) sm.data = await csv(defaultPath + sm.id, autoType);
+    if (sm.id !== undefined && sm.data === undefined) sm.data = await csv(`${sm.id}/data_${sm.id}.csv`, autoType);
     if ($page.url.searchParams.has('lang')) {
       $lang = $page.url.searchParams.get('lang') == 'en' ? 'English' : 'Español';
     } 
