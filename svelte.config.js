@@ -7,7 +7,7 @@ const config = {
 			base: ''
 		},
 		adapter: adapter({
-				// pages: 'build',
+				pages: 'docs',
 				// fallback: "index.html",
 				precompress: false,
 				strict: true,
